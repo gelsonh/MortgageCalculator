@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MortgageCalculator",
   "resources": {
-    "hash": "sha256-aUlh5Rvp2H/dSK7psU0XZfyU6ErxeoiThMBlEsgQmjQ=",
+    "hash": "sha256-hxERWX6Cshtqezccu6rl3uo+FFwWlKoI0urvQCWfUUc=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-D0bzod5lwwSzPR43JC8TTCcZKw+3jIHOk8CZFCRj5is="
     },
@@ -57,7 +57,7 @@
       "System.Text.RegularExpressions.wasm": "sha256-3W9FSHhJnymXzdUqrxjgrpUOznpPW+8vDLZntL7hmmA=",
       "System.wasm": "sha256-9DLmgOsnmEbjuZrRVFruRmVRvh/skjCDv6hQMjVZ3K8=",
       "System.Private.CoreLib.wasm": "sha256-+cvfb6+b9g4Opb547sCFK7c+OuCxAnyKR0U4dIqnt5U=",
-      "MortgageCalculator.wasm": "sha256-s3xKfFmy3+xtCQpVnYR2kvrVRjKdBotNPmIfqP/zWIE="
+      "MortgageCalculator.wasm": "sha256-Mgff55mcSeI3KuUIUmPxDR3r0fE9d8WpRQzWkjujTfY="
     }
   },
   "cacheBootResources": true,

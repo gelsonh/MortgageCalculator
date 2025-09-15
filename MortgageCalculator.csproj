@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="dist\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EditorConfigFiles Remove="C:\Users\gelsonhernandez\source\repos\MortgageCalculator\.editorconfig" />
   </ItemGroup>
 
