@@ -1,0 +1,39 @@
+﻿<div class="mt-5 border border-1 p-4">
+     @if(Payments.Count > 0){
+	    <h2 class="mb-4">Payment Schedule</h2>
+	    <div class="table-responsive">
+		<table class="table table-striped table-hover">
+			<thead class="table-primary">
+				<tr>
+					<th>Months</th>
+					<th>Payment</th>
+					<th>Principal</th>
+					<th>Interest</th>
+					<th>Total Interest</th>
+					<th>Balance</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var payment in Payments)
+				{
+					<tr>
+						<td>@payment.Month</td>
+						<td>@payment.Payment.ToString("C")</td>
+						<td>@payment.MonthlyPrincipal.ToString("C")</td>
+						<td>@payment.MonthlyInterest.ToString("C")</td>
+						<td>@payment.TotalInterest.ToString("C")</td>
+						<td>@payment.Balance.ToString("C")</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+	  } else {
+		<p>No payment schedule available. Enter some values and press calculate to see loan payments</p>
+	  }
+</div>
+
+@code {
+	[Parameter, EditorRequired]
+	public List<LoanPayment> Payments { get; set; } = new();
+}

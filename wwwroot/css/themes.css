@@ -1,0 +1,126 @@
+﻿:root {
+    --gh-theme-core: var(--gh-code-magic-core);
+    /* app background */
+    --gh-theme-100: var(--gh-code-magic-100);
+    /* subtle background */
+    --gh-theme-150: var(--gh-code-magic-150);
+    /* UI element background */
+    --gh-theme-200: var(--gh-code-magic-200);
+    /* hovered UI background */
+    --gh-theme-300: var(--gh-code-magic-300);
+    /* active UI */
+    --gh-theme-400: var(--gh-code-magic-400);
+    /* selected UI */
+    --gh-theme-500: var(--gh-code-magic-500);
+    /* subtle borders and spearators */
+    --gh-theme-600: var(--gh-code-magic-600);
+    /* element border / focus rings */
+    --gh-theme-700: var(--gh-code-magic-700);
+    /* hovered border  */
+    --gh-theme-800: var(--gh-code-magic-800);
+    /* hovered dark backgrounds */
+    --gh-theme-850: var(--gh-code-magic-850);
+    /* dark backgrounds */
+    --gh-theme-900: var(--gh-code-magic-900);
+    /* #region code-magic */
+    --gh-code-magic-core: #f2c864; /* yellow accent */
+    --gh-code-magic-100: hsl(192, 77%, 79%); /* turqoise */
+    --gh-code-magic-150: hsl(192, 77%, 74%);
+    --gh-code-magic-200: #87bbd7;
+    --gh-code-magic-300: hsl(192, 77%, 69%);
+    --gh-code-magic-400: #f2c864;
+    --gh-code-magic-500: hsl(192, 77%, 49%);
+    --gh-code-magic-600: hsl(192, 77%, 39%);
+    --gh-code-magic-700: hsl(192, 77%, 29%);
+    --gh-code-magic-800: hsl(192, 77%, 19%);
+    --gh-code-magic-850: hsl(192, 77%, 15%);
+    --gh-code-magic-900: hsl(192, 77%, 9%);
+    /* #endregion code-magic */
+  
+    /* #region gray */
+    --gh-gray-core: #adb5bd;
+    --gh-gray-100: hsl(210, 17%, 98%);
+    --gh-gray-150: hsl(210, 17%, 93%);
+    --gh-gray-200: hsl(210, 17%, 88%);
+    --gh-gray-300: hsl(210, 17%, 78%);
+    --gh-gray-400: hsl(210, 17%, 68%);
+    --gh-gray-500: hsl(210, 17%, 58%);
+    --gh-gray-600: hsl(210, 17%, 48%);
+    --gh-gray-700: hsl(210, 17%, 38%);
+    --gh-gray-800: hsl(210, 17%, 28%);
+    --gh-gray-850: hsl(210, 17%, 23%);
+    --gh-gray-900: hsl(210, 17%, 18%);
+    /* #endregion gray */
+}
+
+a {
+    color: var(--gh-theme-500);
+}
+
+    a:hover {
+        color: var(--gh-theme-300);
+    }
+
+.btn-primary {
+    --bs-btn-bg: var(--gh-theme-600);
+    --bs-btn-border-color: var(--gh-theme-600);
+    --bs-btn-hover-bg: var(--gh-theme-700);
+    --bs-btn-hover-border-color: var(--gh-theme-700);
+    --bs-btn-active-bg: var(--gh-theme-800);
+    --bs-btn-active-border-color: var(--gh-theme-800);
+    --bs-btn-disabled-bg: var(--gh-theme-600);
+    --bs-btn-disabled-border-color: var(--gh-theme-600);
+}
+
+.btn-dark {
+    --bs-btn-bg: var(--gh-theme-850);
+    --bs-btn-border-color: var(--gh-theme-850);
+    --bs-btn-hover-bg: var(--gh-theme-800);
+    --bs-btn-hover-border-color: var(--gh-theme-800);
+    --bs-btn-active-bg: var(--gh-theme-700);
+    --bs-btn-active-border-color: var(--gh-theme-700);
+    --bs-btn-disabled-bg: var(--gh-theme-850);
+    --bs-btn-disabled-border-color: var(--gh-theme-850);
+}
+
+.btn-light {
+    --bs-btn-bg: var(--gh-theme-100);
+    --bs-btn-border-color: var(--gh-theme-100);
+    --bs-btn-hover-bg: var(--gh-theme-150);
+    --bs-btn-hover-border-color: var(--gh-theme-150);
+    --bs-btn-active-bg: var(--gh-theme-200);
+    --bs-btn-active-border-color: var(--gh-theme-200);
+    --bs-btn-disabled-bg: var(--gh-theme-100);
+    --bs-btn-disabled-border-color: var(--gh-theme-100);
+}
+
+
+[data-gh-theme="code-magic"] {
+    --gh-theme-core: var(--gh-code-magic-core);
+    --gh-theme-100: var(--gh-code-magic-100);
+    --gh-theme-150: var(--gh-code-magic-150);
+    --gh-theme-200: var(--gh-code-magic-200);
+    --gh-theme-300: var(--gh-code-magic-300);
+    --gh-theme-400: var(--gh-code-magic-400);
+    --gh-theme-500: var(--gh-code-magic-500);
+    --gh-theme-600: var(--gh-code-magic-600);
+    --gh-theme-700: var(--gh-code-magic-700);
+    --gh-theme-800: var(--gh-code-magic-800);
+    --gh-theme-850: var(--gh-code-magic-850);
+    --gh-theme-900: var(--gh-code-magic-900);
+}
+
+[data-gh-theme="gray"] {
+    --gh-theme-core: var(--gh-gray-core);
+    --gh-theme-100: var(--gh-gray-100);
+    --gh-theme-150: var(--gh-gray-150);
+    --gh-theme-200: var(--gh-gray-200);
+    --gh-theme-300: var(--gh-gray-300);
+    --gh-theme-400: var(--gh-gray-400);
+    --gh-theme-500: var(--gh-gray-500);
+    --gh-theme-600: var(--gh-gray-600);
+    --gh-theme-700: var(--gh-gray-700);
+    --gh-theme-800: var(--gh-gray-800);
+    --gh-theme-850: var(--gh-gray-850);
+    --gh-theme-900: var(--gh-gray-900);
+}

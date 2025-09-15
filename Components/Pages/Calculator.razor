@@ -1,0 +1,120 @@
+﻿@page "/mortgagemapper"
+
+
+<div class="container-xxl my-3">
+<h1 class="mb-2">Loan Calculator</h1>
+<p>
+	<!--Description-->
+	This is a simple loan calculator that helps you estimate your monthly mortgage payments based on the loan amount, interest rate, and loan term.
+	It also provides a breakdown of the total payment into principal and interest components.
+</p>
+<p>
+	<!--Instruction-->
+	To use the calculator, simply enter the loan amount, annual interest rate, and loan term in the input fields below.
+    Click the "Calculate" button to see your estimated monthly payment and the breakdown of principal and interest.
+</p>
+<div class="row">
+	<div class="col-12 col-md-6 loanForm p-3 rounded-3">
+		<EditForm EditContext="editContext" OnValidSubmit="HandleSubmit">
+				<DataAnnotationsValidator />
+				<div class="row gy-2">
+					<div class="col-12">
+						<label for="purchaseAmount" class="form-label">Purchase Amount:</label>
+						<InputNumber @bind-Value="loan.PurchaseAmount" class="form-control" step="100" />
+						<ValidationMessage For="()=> loan.PurchaseAmount" />
+					</div>
+					<div class="col-12">
+						<label for="loanTerm" class="form-label">Loan Term in Years:</label>
+						<InputNumber @bind-Value="loan.Term" class="form-control" min="1" />
+						<ValidationMessage For="() => loan.Term" />
+					</div>
+					<div class="col-12">
+						<label for="loanRate" class="form-label">Rate:</label>
+						<InputNumber @bind-Value="loan.Rate" class="form-control" min="0" step=".1" />
+						<ValidationMessage For="() => loan.Rate" />
+					</div>
+					<div class="text-end">
+					  <button type="submit" class="btn btn-primary mt-2">Calculate</button>
+					</div>
+				</div>
+		</EditForm>
+	</div>
+	<div class="col-12 col-md-6 d-flex flex-column justify-content-between px-4 mt-4 mt-md-0">
+		<div class="paymentTitle">
+		  <p>Your Monthly Payment</p>
+		</div>
+		<div class="display-1 payment">
+			@loan.Payment.ToString("C")
+		</div>
+
+		<div class="row border border-1 g-0 p-3">
+			<div class="col-6">
+				<label class="text-start">Purchase Amount</label>
+			</div>
+			<div class="col-6 text-end">
+				@loan.PurchaseAmount.ToString("C")
+			</div>
+			<div class="col-6">
+				<label class="text-start">Total Interest</label>
+			</div>
+			<div class="col-6 text-end">
+				@loan.TotalInterest.ToString("C")
+			</div>
+			<div class="col-6">
+				<label class="text-start">Total Cost</label>
+			</div>
+				<div class="col-6 text-end totalCost">
+				@loan.TotalCost.ToString("C")
+			</div>
+		</div>
+			
+		<div class="text-end mt-2">
+			<button class="btn btn-primary" @onclick="ShowScheduleToggle">@buttonText</button>
+		</div>
+	</div>
+
+		@if(showSchedule)
+		{
+			<div class="col-12 fade-in">
+				<PaymentShedule Payments="loan.Payments" />
+			</div>
+		}
+		
+</div> 
+
+</div>
+
+@code {
+	private Loan loan = new Loan();
+	private EditContext? editContext;
+	private bool showSchedule = false;
+	private string buttonText = "Show Schedule";
+
+	protected override void OnInitialized()
+	{
+		editContext = new EditContext(loan);
+		loan.PurchaseAmount = 25000;
+		loan.Term = 5;
+		loan.Rate = 5.0;
+	}
+
+	private void HandleSubmit()
+	{
+		loan = LoanUtility.GetPayments(loan);
+	}
+
+	private void ShowScheduleToggle()
+	{
+		if (showSchedule)
+		{
+			showSchedule = false;
+			buttonText = "Show Schedule";
+		}
+		else
+		{
+			showSchedule = true;
+			buttonText = "Hide Schedule";
+		}
+	}
+
+}
