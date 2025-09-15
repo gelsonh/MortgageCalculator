@@ -11,4 +11,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.19" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="dist\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\gelsonhernandez\source\repos\MortgageCalculator\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\gelsonhernandez\source\repos\MortgageCalculator\.editorconfig" />
+  </ItemGroup>
+
 </Project>
